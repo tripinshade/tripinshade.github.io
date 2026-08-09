@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Object Studies — Maryna Savchenko</title>
+<meta name="description" content="Notes on why things are beautiful. Essays by Maryna Savchenko, Brand Strategist.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,600;1,9..144,400;1,9..144,500&family=Lora:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --paper:      #E7E2D5;
+    --paper-2:    #DEDACB;
+    --ink:        #211E19;
+    --ink-soft:   #4A453C;
+    --moss:       #3E4A34;
+    --seal:       #A63626;
+    --line:       rgba(33,30,25,0.16);
+    --line-strong:rgba(33,30,25,0.32);
+    --max: 760px;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin:0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Lora', serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection{ background: var(--moss); color: var(--paper); }
+
+  a{ color: inherit; }
+
+  .wrap{
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  .mono{
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: 0.02em;
+  }
+
+  /* ---------- header ---------- */
+  header{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav{
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 18px 28px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+  .nav-name{
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 17px;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+  }
+  .nav-links{
+    display: flex;
+    gap: 22px;
+    list-style: none;
+    margin: 0; padding: 0;
+  }
+  .nav-links a{
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+    transition: color .2s, border-color .2s;
+  }
+  .nav-links a:hover{ color: var(--seal); border-color: var(--seal); }
+
+  /* ---------- hero ---------- */
+  .hero{
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 76px 28px 40px;
+    position: relative;
+  }
+  .hero-eyebrow{
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--moss);
+    margin: 0 0 18px;
+  }
+  h1.hero-title{
+    font-family: 'Fraunces', serif;
+    font-weight: 450;
+    font-size: clamp(38px, 6.4vw, 62px);
+    line-height: 1.06;
+    margin: 0 0 22px;
+    letter-spacing: -0.01em;
+  }
+  h1.hero-title em{
+    font-style: italic;
+    font-weight: 400;
+    color: var(--seal);
+  }
+  .hero-dek{
+    font-size: 18px;
+    color: var(--ink-soft);
+    max-width: 52ch;
+    margin: 0 0 8px;
+  }
+  .hero-branch{
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    margin: 30px 0 6px -6px;
+    display: block;
+  }
+  .hero-branch path{
+    fill: none;
+    stroke: var(--ink);
+    stroke-width: 1.4;
+    stroke-linecap: round;
+    stroke-dasharray: 600;
+    stroke-dashoffset: 600;
+    animation: draw 1.8s ease forwards .2s;
+  }
+  .hero-branch circle{
+    fill: var(--seal);
+    opacity: 0;
+    animation: fadein .6s ease forwards 1.6s;
+  }
+  @keyframes draw{ to{ stroke-dashoffset: 0; } }
+  @keyframes fadein{ to{ opacity: 1; } }
+  @media (prefers-reduced-motion: reduce){
+    .hero-branch path{ animation: none; stroke-dashoffset: 0; }
+    .hero-branch circle{ animation: none; opacity: 1; }
+  }
+
+  /* ---------- section scaffolding ---------- */
+  section{
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 54px 28px;
+  }
+  .section-head{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--line-strong);
+    padding-bottom: 12px;
+    margin-bottom: 36px;
+  }
+  .section-head h2{
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 26px;
+    margin: 0;
+  }
+  .section-head .count{
+    font-size: 12px;
+    color: var(--ink-soft);
+  }
+
+  /* ---------- catalog / essays ---------- */
+  .specimen{
+    display: grid;
+    grid-template-columns: 74px 1fr;
+    gap: 22px;
+    padding: 30px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .specimen:first-of-type{ padding-top: 0; }
+  .specimen:last-of-type{ border-bottom: none; }
+  .specimen-no{
+    font-size: 12px;
+    color: var(--seal);
+    padding-top: 4px;
+  }
+  .specimen-no .label{
+    display:block;
+    color: var(--ink-soft);
+    margin-bottom: 3px;
+  }
+  .specimen h3{
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 23px;
+    margin: 0 0 10px;
+    line-height: 1.25;
+  }
+  .specimen .meta{
+    font-size: 11.5px;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
+  }
+  .specimen p{
+    margin: 0 0 12px;
+    color: var(--ink-soft);
+    max-width: 58ch;
+  }
+  .specimen p:last-child{ margin-bottom: 0; }
+  .specimen .read{
+    display: inline-block;
+    margin-top: 6px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.03em;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink);
+  }
+
+  @media (max-width: 560px){
+    .specimen{ grid-template-columns: 1fr; gap: 8px; }
+    .specimen-no{ display:flex; gap:6px; }
+    .specimen-no .label{ display:inline; margin:0; }
+  }
+
+  /* ---------- about ---------- */
+  .about-grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .about p{ color: var(--ink-soft); max-width: 62ch; }
+  .about strong{ color: var(--ink); font-weight: 500; }
+  .roles{
+    list-style: none;
+    margin: 22px 0 0;
+    padding: 0;
+    border-top: 1px solid var(--line);
+  }
+  .roles li{
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 14.5px;
+  }
+  .roles .role{ color: var(--ink); }
+  .roles .co{ color: var(--ink-soft); font-family:'IBM Plex Mono', monospace; font-size:12.5px; text-align: right; white-space: nowrap; }
+
+  /* ---------- contact ---------- */
+  .contact-list{ list-style:none; margin: 0; padding:0; }
+  .contact-list li{ border-bottom: 1px solid var(--line); }
+  .contact-list a{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 18px 0;
+    text-decoration: none;
+    font-family: 'Fraunces', serif;
+    font-size: 19px;
+    transition: padding-left .2s, color .2s;
+  }
+  .contact-list a:hover{ color: var(--seal); padding-left: 8px; }
+  .contact-list .arrow{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+
+  footer{
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 30px 28px 60px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--ink-soft);
+    border-top: 1px solid var(--line);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="nav-name" href="#top">Maryna Savchenko</a>
+    <ul class="nav-links">
+      <li><a href="#essays">Essays</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <p class="hero-eyebrow mono">Object Studies — a journal on beauty</p>
+    <h1 class="hero-title">Some things are beautiful.<br>I write down <em>why</em>.</h1>
+    <p class="hero-dek">Short essays on the objects, products, and details that reward a second look — by a brand strategist who thinks taste is a working tool, not a luxury.</p>
+
+    <svg class="hero-branch" viewBox="0 0 420 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M10,120 C 90,110 140,80 165,50 C 185,26 210,14 250,10 C 290,6 330,16 365,8" />
+      <path d="M120,96 C 128,78 140,66 158,58" />
+      <path d="M210,34 C 218,20 232,10 250,6" />
+      <path d="M290,20 C 300,32 310,40 325,44" />
+      <circle cx="365" cy="8" r="3.5"/>
+      <circle cx="158" cy="58" r="2.6"/>
+      <circle cx="250" cy="6" r="2.6"/>
+    </svg>
+  </section>
+
+  <section id="essays">
+    <div class="section-head">
+      <h2>The Catalog</h2>
+      <span class="count mono">04 specimens</span>
+    </div>
+
+    <article class="specimen">
+      <div class="specimen-no mono"><span class="label">Specimen</span>01</div>
+      <div>
+        <h3>On the Weight of a Matcha Bowl</h3>
+        <p class="meta">Object · Ceramic · Notes on ritual</p>
+        <p>A good chawan is heavier than you expect the first time you hold it, and that is the entire point. The weight slows your hands down before the tea does anything to your head. Most packaging today is designed to disappear — light, frictionless, gone in one motion. A bowl built for matcha does the opposite: it insists on a pause.</p>
+        <p>What I keep noticing, watching people discover matcha as a category rather than a drink, is that the ritual sells the product more honestly than the marketing does. You can't rush a whisked bowl. The beauty is in the resistance.</p>
+        <a class="read" href="#">Read the full essay →</a>
+      </div>
+    </article>
+
+    <article class="specimen">
+      <div class="specimen-no mono"><span class="label">Specimen</span>02</div>
+      <div>
+        <h3>The Discipline of Empty Space</h3>
+        <p class="meta">Practice · Ikebana · On restraint</p>
+        <p>In ikebana, the branch you remove matters more than the one you keep. Beginners fill the vessel; the practice is learning to leave it alone. What looks like emptiness is actually the hardest decision in the arrangement — the negative space is doing as much work as the flower.</p>
+        <p>I think about this constantly in brand work, where the instinct is always to add one more line, one more offer, one more banner. The strongest campaigns I've shipped were the ones I fought to keep empty.</p>
+        <a class="read" href="#">Read the full essay →</a>
+      </div>
+    </article>
+
+    <article class="specimen">
+      <div class="specimen-no mono"><span class="label">Specimen</span>03</div>
+      <div>
+        <h3>Why a Kombucha Bottle Deserves a Second Look</h3>
+        <p class="meta">Object · Glass · On category-defining</p>
+        <p>Launching a fermented drink in a new city means fighting for shelf space against products people already trust. The bottle has to do the convincing before anyone reads the label. What I learned launching MOR'KO in Hamburg is that glass has a memory — the thickness, the neck taper, the way light sits in it — and shoppers read that memory instinctively, faster than copy.</p>
+        <p>Beauty, in a fridge full of competitors, is a shortcut to trust.</p>
+        <a class="read" href="#">Read the full essay →</a>
+      </div>
+    </article>
+
+    <article class="specimen">
+      <div class="specimen-no mono"><span class="label">Specimen</span>04</div>
+      <div>
+        <h3>The Kerning of a Title Card</h3>
+        <p class="meta">Film · Typography · On first impressions</p>
+        <p>Before a single frame of story, a film tells you how much it respects you through its opening title. Loose kerning, a lazy stock font, a rushed fade — you know within four seconds what kind of attention went into the rest. The directors I return to are, without exception, the ones who treated the title card like a promise.</p>
+        <p>Brands make the same promise in their first five seconds. Most break it immediately.</p>
+        <a class="read" href="#">Read the full essay →</a>
+      </div>
+    </article>
+  </section>
+
+  <section id="about" class="about">
+    <div class="section-head">
+      <h2>About</h2>
+      <span class="count mono">Barcelona</span>
+    </div>
+    <div class="about-grid">
+      <p>I'm <strong>Maryna Savchenko</strong>, a brand and growth marketing manager currently building the matcha category at <strong>NaturaleBio</strong> — overseeing ecommerce strategy, CRM, social, influencer partnerships, and everything in between that a "brand manager" title doesn't quite cover anymore.</p>
+      <p>What I think sets me apart in this field isn't a framework — it's taste. A trained eye for what actually looks and feels right, built the same way any craft is built: by paying close attention, over years, to objects that work.</p>
+      <p>Outside of work I practice ikebana, and I'm hoping to exhibit arrangements in a few Barcelona galleries soon. I also write about film, off and on, at <a href="https://putthelightsdown.wordpress.com" target="_blank" rel="noopener">putthelightsdown.wordpress.com</a>. This site is where those two habits — looking closely, and writing it down — meet the working part of my life.</p>
+
+      <ul class="roles">
+        <li><span class="role">Brand Manager, Growth &amp; CRM</span><span class="co">NaturaleBio</span></li>
+        <li><span class="role">Brand Manager</span><span class="co">Lucky Strike</span></li>
+        <li><span class="role">City Launch — Hamburg</span><span class="co">MOR'KO Kombucha</span></li>
+        <li><span class="role">CRM</span><span class="co">Glovo</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-head">
+      <h2>Contact</h2>
+      <span class="count mono">Open to work</span>
+    </div>
+    <ul class="contact-list">
+      <li><a href="mailto:hello@example.com">Email<span class="arrow mono">→</span></a></li>
+      <li><a href="#" target="_blank" rel="noopener">LinkedIn<span class="arrow mono">→</span></a></li>
+      <li><a href="https://putthelightsdown.wordpress.com" target="_blank" rel="noopener">Film writing<span class="arrow mono">→</span></a></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  <span>© <span id="year"></span> Maryna Savchenko</span>
+  <span class="mono">Object Studies</span>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
