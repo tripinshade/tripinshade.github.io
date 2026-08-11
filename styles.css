@@ -139,6 +139,31 @@ body.landing::before{
 .index-menu.on-dark a:hover{ color: rgba(242,239,233,0.65); }
 .index-menu.on-dark .n{ color: rgba(242,239,233,0.55); }
 
+/* ---------- about page: color-field backdrop, translucent reading panel ---------- */
+body.about-page{
+  margin:0;
+  padding: 22px;
+  box-sizing:border-box;
+  min-height:100vh;
+  background:#0A0A0A;
+}
+body.about-page::before{
+  content:'';
+  position:fixed; inset:0;
+  z-index:-1;
+  background:
+    radial-gradient(ellipse 72% 34% at 50% 10%, rgba(230,181,46,0.68), transparent 62%),
+    radial-gradient(ellipse 95% 26% at 50% 50%, rgba(196,42,28,0.62), transparent 62%),
+    radial-gradient(ellipse 85% 40% at 50% 88%, rgba(214,122,44,0.62), transparent 62%),
+    #0A0A0A;
+  filter: blur(75px) saturate(1.15);
+}
+body.about-page .layout{
+  background: rgba(255,255,255,0.93);
+  min-height: calc(100vh - 44px);
+  box-shadow: 0 24px 70px rgba(0,0,0,0.4);
+}
+
 /* ---------- hero ---------- */
 .hero{
   max-width:var(--max); margin:0 auto;
@@ -197,7 +222,7 @@ section{ max-width:var(--max); margin:0 auto; padding:52px 28px; border-top:1px 
   overflow:hidden;
   transition: max-height .35s ease;
 }
-.specimen.is-open .extra{ max-height:600px; }
+.specimen.is-open .extra{ max-height:4000px; }
 .specimen .read{
   display:inline-flex; align-items:center; gap:6px;
   margin-top:12px; cursor:pointer;
