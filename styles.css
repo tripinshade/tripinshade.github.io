@@ -271,14 +271,15 @@ section{ max-width:var(--max); margin:0 auto; padding:52px 28px; border-top:1px 
 /* ---------- inspiration grid: dense moodboard, hover-reveal captions ---------- */
 .insp-grid{
   display:grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 2px;
 }
 .insp-tile{
   position:relative;
-  aspect-ratio: 1/1;
+  aspect-ratio: 3/4;
   overflow:hidden;
   cursor:default;
+  background: rgba(0,0,0,0.25);
 }
 .insp-img{
   width:100%; height:100%;
@@ -295,7 +296,7 @@ section{ max-width:var(--max); margin:0 auto; padding:52px 28px; border-top:1px 
 .insp-tile:hover .insp-img{ transform: scale(1.04); }
 .insp-tile img.insp-photo{
   width:100%; height:100%;
-  object-fit:cover;
+  object-fit:contain;
   display:block;
   transition: transform .5s ease;
 }
@@ -335,6 +336,9 @@ section{ max-width:var(--max); margin:0 auto; padding:52px 28px; border-top:1px 
   opacity:1;
 }
 .insp-tile.insp-series:hover .insp-img.is-active{ transform: scale(1.04); }
+@media (max-width:900px){
+  .insp-grid{ grid-template-columns: repeat(3, 1fr); }
+}
 @media (max-width:700px){
   .insp-grid{ grid-template-columns: repeat(2, 1fr); }
 }
