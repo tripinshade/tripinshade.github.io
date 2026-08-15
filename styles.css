@@ -233,9 +233,11 @@ h1.hero-title em{ font-style:italic; color: var(--ink-soft); }
 
 /* ---------- section scaffolding ---------- */
 section{ max-width:var(--max); margin:0 auto; padding:52px 28px; border-top:1px solid var(--line); }
+section#collected{ max-width:1500px; }
 .section-head{
   display:flex; align-items:baseline; justify-content:space-between;
   margin-bottom:36px;
+  max-width: var(--max);
 }
 .section-head h2{
   font-family: var(--serif);
@@ -292,8 +294,8 @@ section{ max-width:var(--max); margin:0 auto; padding:52px 28px; border-top:1px 
 
 /* ---------- inspiration grid: dense moodboard, hover-reveal captions ---------- */
 .insp-grid{
-  column-count: 4;
-  column-gap: 2px;
+  column-count: 6;
+  column-gap: 36px;
 }
 .insp-tile{
   position:relative;
@@ -301,7 +303,7 @@ section{ max-width:var(--max); margin:0 auto; padding:52px 28px; border-top:1px 
   cursor:default;
   background: rgba(0,0,0,0.25);
   break-inside: avoid;
-  margin-bottom: 2px;
+  margin-bottom: 36px;
   display:block;
   width:100%;
 }
@@ -366,6 +368,12 @@ section{ max-width:var(--max); margin:0 auto; padding:52px 28px; border-top:1px 
   opacity:1;
 }
 .insp-tile.insp-series:hover .insp-img.is-active{ transform: scale(1.04); }
+@media (max-width:1200px){
+  .insp-grid{ column-count: 5; }
+}
+@media (max-width:1000px){
+  .insp-grid{ column-count: 4; }
+}
 @media (max-width:900px){
   .insp-grid{ column-count: 3; }
 }
