@@ -107,7 +107,7 @@ a{ color:inherit; }
     width:100%;
     height:auto;
     border-right:none;
-    border-bottom:1px solid var(--line);
+    border-bottom:none;
   }
   .sidebar .nav-name{ margin-bottom:0; }
   .menu-toggle{ display:inline-flex; }
