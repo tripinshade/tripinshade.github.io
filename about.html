@@ -8,14 +8,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=26">
+<link rel="stylesheet" href="styles.css?v=27">
 </head>
 <body class="page-bg field-gold">
 
 <div class="layout">
-  <aside class="sidebar">
+  <aside class="sidebar" id="site-sidebar">
     <a class="nav-name" href="index.html">Maryna Savchenko<br><em>Aesthetic Studies</em></a>
-    <nav aria-label="Site index">
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu <span class="ico">+</span></button>
+    <nav id="site-nav" aria-label="Site index">
       <ul class="index-menu">
         <li><a href="about.html"><span class="n sans">01</span> About</a></li>
         <li><a href="essays.html"><span class="n sans">02</span> Essays</a></li>
@@ -67,6 +68,15 @@
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+  var menuBtn = document.querySelector('.menu-toggle');
+  if (menuBtn) {
+    menuBtn.addEventListener('click', function(){
+      var sidebar = document.getElementById('site-sidebar');
+      var open = sidebar.classList.toggle('nav-open');
+      menuBtn.setAttribute('aria-expanded', open);
+    });
+  }
+
 </script>
 
 </body>

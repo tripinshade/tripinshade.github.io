@@ -85,6 +85,21 @@ a{ color:inherit; }
   min-width:16px;
 }
 
+/* ---------- mobile menu toggle ---------- */
+.menu-toggle{
+  display:none;
+  background:none; border:none; padding:0; margin:14px 0 0;
+  font-family: var(--sans); font-size:11px; text-transform:uppercase; letter-spacing:0.08em;
+  color: var(--ink-soft); cursor:pointer;
+  align-items:center; gap:7px;
+}
+.menu-toggle .ico{
+  display:inline-block; width:14px; text-align:center;
+  font-family: var(--serif); font-size:14px; line-height:1;
+  transition: transform .25s ease;
+}
+.sidebar.nav-open .menu-toggle .ico{ transform: rotate(45deg); }
+
 @media (max-width: 860px){
   .layout{ flex-direction:column; }
   .sidebar{
@@ -94,8 +109,16 @@ a{ color:inherit; }
     border-right:none;
     border-bottom:1px solid var(--line);
   }
-  .sidebar .nav-name{ margin-bottom:20px; }
+  .sidebar .nav-name{ margin-bottom:0; }
+  .menu-toggle{ display:inline-flex; }
+  #site-nav{
+    max-height:0;
+    overflow:hidden;
+    transition: max-height .35s ease;
+  }
+  .sidebar.nav-open #site-nav{ max-height:500px; margin-top:10px; }
 }
+
 
 /* ---------- landing page (index.html only) ---------- */
 body.landing{
