@@ -459,3 +459,15 @@ footer.site-footer{
   .case-block{ grid-template-columns: 1fr; gap:8px; }
   .case-pair{ grid-template-columns: 1fr; }
 }
+
+.platform{ list-style:none; margin:18px 0 0; padding:0; }
+.platform li{ display:grid; grid-template-columns:130px 1fr; gap:16px; padding:12px 0; border-top:1px solid var(--line); }
+.platform .label{ padding-top:4px; }
+.case-quad{ display:grid; grid-template-columns: 1fr 1fr 2fr; gap:12px; align-items:stretch; }
+.case-quad img{ height:100%; object-fit:cover; }
+.touchpoints{ display:grid; grid-template-columns: repeat(4, 1fr); gap:18px; padding:10px 0 34px; }
+.touchpoints img{ width:100%; aspect-ratio:3/4; object-fit:cover; display:block; margin-bottom:12px; }
+.touchpoints .label{ margin:0 0 6px; }
+.touchpoints p{ margin:0; font-size:15px; line-height:1.5; }
+@media (max-width: 900px){ .touchpoints{ grid-template-columns: 1fr 1fr; } }
+@media (max-width: 700px){ .case-quad{ grid-template-columns: 1fr 1fr; } .case-quad img:last-child{ grid-column: 1 / -1; } .platform li{ grid-template-columns:1fr; gap:4px; } }
