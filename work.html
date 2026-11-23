@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work — Maryna Savchenko</title>
+<meta name="description" content="Brand strategy and identity work by Maryna Savchenko: MOR'KO Kombucha and Lucky Strike.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=60">
+</head>
+<body class="page-bg field-void">
+
+<div class="layout">
+  <aside class="sidebar" id="site-sidebar">
+    <a class="nav-name" href="index.html">Maryna Savchenko</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu <span class="ico">+</span></button>
+    <nav id="site-nav" aria-label="Site index">
+      <ul class="index-menu">
+        <li><a href="about.html"><span class="n sans">01</span> About</a></li>
+        <li><a href="work.html"><span class="n sans">02</span> Work</a></li>
+        <li><a href="essays.html"><span class="n sans">03</span> Essays</a></li>
+        <li><a href="collected.html"><span class="n sans">04</span> Collected</a></li>
+        <li><a class="ext" href="https://putthelightsdown.wordpress.com" target="_blank" rel="noopener"><span class="n sans">05</span> Film Notes</a></li>
+        <li><a href="contact.html"><span class="n sans">06</span> Contact</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <div class="content">
+  <main id="top">
+
+  <section id="work" style="border-top:none;">
+    <div class="section-head" style="display:block;">
+      <h2>Work</h2>
+      <p class="dek" style="margin-top:16px; color:var(--ink-soft); max-width:56ch;">Brand and consumer marketing lead. I turn what people really care about into brands they come back to. I’m curious about what moves people, and I use it to build brands that earn a place in their everyday lives.</p>
+    </div>
+
+    <ul class="case-index">
+      <li><a href="naturalebio.html">
+        <img src="naturalebio-01.webp" alt="A woman sitting on a wooden floor with NaturaleBio açaí and moringa packs">
+        <div>
+          <span class="label">No. 01 — Brand building — Barcelona</span>
+          <h3>NaturaleBio</h3>
+          <p>Building a top Amazon matcha seller into a brand people return to, around small everyday rituals. Research, brand platform, packaging, website, CRM, social and partnerships.</p>
+          <span class="more">Read the case →</span>
+        </div>
+      </a></li>
+      <li><a href="morko.html">
+        <img src="morko-01.webp" alt="Collage of MOR'KO kombucha lifestyle photography: people drinking from the bottle on the street, on a bike and at a picnic">
+        <div>
+          <span class="label">No. 02 — Brand launch — Hamburg</span>
+          <h3>MOR'KO Kombucha</h3>
+          <p>Launching a kombucha brand in a market that thought kombucha was too healthy and too sour. Research, brand idea, naming, identity, packaging, shoot and launch activation.</p>
+          <span class="more">Read the case →</span>
+        </div>
+      </a></li>
+      <li><a href="luckystrike.html">
+        <img src="luckystrike-01.webp" alt="Lucky Strike festival activation: a branded wall, a festival van and live tattooing">
+        <div>
+          <span class="label">No. 03 — Rejuvenation strategy — Germany</span>
+          <h3>Lucky Strike</h3>
+          <p>Making an iconic but dormant brand relevant again for people under 30, through self-expression rather than nostalgia.</p>
+          <span class="more">Read the case →</span>
+        </div>
+      </a></li>
+    </ul>
+  </section>
+
+  <section id="what-i-do">
+    <div class="section-head">
+      <h2>What I do</h2>
+    </div>
+    <div class="capabilities">
+      <div>
+        <h4>Brand strategy</h4>
+        <ul>
+          <li>Market research and brand audit</li>
+          <li>Audience insights</li>
+          <li>Brand story and key message</li>
+          <li>Positioning</li>
+          <li>Brand character and tone of voice</li>
+          <li>Campaign development</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Brand identity</h4>
+        <ul>
+          <li>Naming, taglines and motto</li>
+          <li>Tone of voice and communication matrix</li>
+          <li>Visual identity: logo, colour, type</li>
+          <li>Brand communication templates</li>
+          <li>Brandbook</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Creative direction</h4>
+        <ul>
+          <li>Concept development</li>
+          <li>Art direction</li>
+          <li>Content direction</li>
+          <li>Cross-platform consistency</li>
+          <li>Production supervision</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <span>© <span id="year"></span> Maryna Savchenko</span>
+    <span>Built with HTML &amp; CSS. Hosted on GitHub Pages.</span>
+  </footer>
+  </div>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  var menuBtn = document.querySelector('.menu-toggle');
+  if (menuBtn) {
+    menuBtn.addEventListener('click', function(){
+      var sidebar = document.getElementById('site-sidebar');
+      var open = sidebar.classList.toggle('nav-open');
+      menuBtn.setAttribute('aria-expanded', open);
+    });
+  }
+
+</script>
+
+</body>
+</html>

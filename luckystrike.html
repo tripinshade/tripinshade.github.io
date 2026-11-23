@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lucky Strike — Maryna Savchenko</title>
+<meta name="description" content="Lucky Strike rejuvenation strategy for consumers under 30 in Germany, by Maryna Savchenko.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=60">
+</head>
+<body class="page-bg field-void">
+
+<div class="layout">
+  <aside class="sidebar" id="site-sidebar">
+    <a class="nav-name" href="index.html">Maryna Savchenko</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu <span class="ico">+</span></button>
+    <nav id="site-nav" aria-label="Site index">
+      <ul class="index-menu">
+        <li><a href="about.html"><span class="n sans">01</span> About</a></li>
+        <li><a href="work.html"><span class="n sans">02</span> Work</a></li>
+        <li><a href="essays.html"><span class="n sans">03</span> Essays</a></li>
+        <li><a href="collected.html"><span class="n sans">04</span> Collected</a></li>
+        <li><a class="ext" href="https://putthelightsdown.wordpress.com" target="_blank" rel="noopener"><span class="n sans">05</span> Film Notes</a></li>
+        <li><a href="contact.html"><span class="n sans">06</span> Contact</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <div class="content">
+  <main id="top">
+
+  <section style="border-top:none;">
+    <div class="section-head" style="display:block;">
+      <p class="label" style="margin:0 0 12px;"><a href="work.html" style="text-decoration:none;">← Work</a> &nbsp;/&nbsp; No. 03</p>
+      <h2>Lucky Strike</h2>
+    </div>
+    <p class="label case-meta">Rejuvenation strategy — Germany — Brand manager</p>
+    <p class="case-lede">An iconic brand that young people had simply stopped hearing about.</p>
+
+    <div class="case-block">
+      <p class="label">Context</p>
+      <div>
+        <p>Lucky Strike was the fifth largest brand in Germany, strong among consumers over 45.</p>
+      </div>
+    </div>
+    <div class="case-block">
+      <p class="label">Challenge</p>
+      <div>
+        <p>Declining relevance among consumers under 30.</p>
+      </div>
+    </div>
+    <div class="case-block">
+      <p class="label">Goal</p>
+      <div>
+        <p>Rebuild Lucky Strike's relevance with consumers under 30.</p>
+      </div>
+    </div>
+    <div class="case-block">
+      <p class="label">Focus groups</p>
+      <div>
+        <p>Older consumers saw Lucky Strike as bold, rebellious and iconic. Younger ones had weak or confused associations with the brand, and often mixed it up with Marlboro's American cowboy image.</p>
+        <p>The key barrier was dormancy. Young consumers had not heard from the brand in a long time, so it lacked salience.</p>
+      </div>
+    </div>
+    <div class="case-block">
+      <p class="label">Diagnosis</p>
+      <div>
+        <p>The brand was read as an outdated “American cowboy” and had become culturally invisible after years of silence, despite deep, authentic roots in music and counterculture.</p>
+      </div>
+    </div>
+    <div class="case-block">
+      <p class="label">Strategy</p>
+      <div>
+        <p>Re-establish Lucky Strike as a symbol of creativity and individuality, driven by cultural engagement through music, art and self-expression. Focus on interactive activations that let people shape the brand on their own terms.</p>
+      </div>
+    </div>
+    <div class="case-block">
+      <p class="label">Concept</p>
+      <div>
+        <p><em>Provoke self-expression through creativity.</em></p>
+      </div>
+    </div>
+    <div class="case-block">
+      <p class="label">Activation one</p>
+      <div>
+        <p>Design your perfect lighter. Online, people created and voted on custom lighter designs. The winning designs were produced and sold nationally, and their creators got festival access and a festival aid box with branded goodies.</p>
+      </div>
+    </div>
+    <div class="case-block">
+      <p class="label">Activation two</p>
+      <div>
+        <p>At the Luckies festival van, fans could work with a local artist to create and get a tattoo, drawing on the brand's cultural roots in music and art.</p>
+      </div>
+    </div>
+
+    <figure class="case-figure case-pair">
+      <img src="luckystrike-01.webp" alt="Lucky Strike festival activation: branded wall, festival van and live tattooing">
+      <img src="luckystrike-02.webp" alt="Fan-designed Lucky Strike lighters and the collector's box campaign">
+    </figure>
+
+    <div class="case-nav">
+      <a href="morko.html">← MOR'KO Kombucha</a>
+      <a href="work.html">All work →</a>
+    </div>
+  </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <span>© <span id="year"></span> Maryna Savchenko</span>
+    <span>Built with HTML &amp; CSS. Hosted on GitHub Pages.</span>
+  </footer>
+  </div>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  var menuBtn = document.querySelector('.menu-toggle');
+  if (menuBtn) {
+    menuBtn.addEventListener('click', function(){
+      var sidebar = document.getElementById('site-sidebar');
+      var open = sidebar.classList.toggle('nav-open');
+      menuBtn.setAttribute('aria-expanded', open);
+    });
+  }
+
+</script>
+
+</body>
+</html>
